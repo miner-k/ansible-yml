@@ -1,0 +1,14 @@
+---
+- hosts: test2
+  tasks:
+  - name: su - root
+    become: yes
+    become_user: root
+    become_method: su
+    shell: sed -i '/PermitRootLogin/s/no/yes/g' /etc/ssh/sshd_config
+  
+  - name: restart sshd service
+    become: yes
+    become_user: root
+    become_method: su
+    service: name=sshd state=restarted

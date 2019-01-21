@@ -1,0 +1,4 @@
+
+[test2]
+192.168.47.132  ansible_ssh_pass=345 ansible_ssh_user=test ansible_su_pass=123
+
